@@ -28,21 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
+            this.folderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
             this.SuspendLayout();
-            // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            this.openFileDialog1.InitialDirectory = "C:";
-            this.openFileDialog1.Tag = "폴더만 사용하고 싶은데 일단 다 나오게 함|(*.*)";
-            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
             // 
             // button1
             // 
@@ -96,6 +89,12 @@
             this.button3.TabIndex = 5;
             this.button3.Text = "현재 상태 분석";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.analysis);
+            // 
+            // folderBrowserDialog
+            // 
+            this.folderBrowserDialog.SelectedPath = "C:\\Users\\maxma\\OneDrive\\바탕 화면";
+            this.folderBrowserDialog.HelpRequest += new System.EventHandler(this.folderBrowserDialog1_HelpRequest);
             // 
             // Form1
             // 
@@ -116,13 +115,12 @@
         }
 
         #endregion
-
-        private OpenFileDialog openFileDialog1;
         private Button button1;
         private Button button2;
         private ProgressBar progressBar1;
         private TextBox textBox1;
         private TextBox textBox2;
         private Button button3;
+        private FolderBrowserDialog folderBrowserDialog;
     }
 }
